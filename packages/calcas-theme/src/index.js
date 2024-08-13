@@ -9,11 +9,22 @@ const calcasTheme = {
     theme: {
       autoPrefetch: "in-view",
       menu: [],
-      menuUrl: "",
+      menuUrl:'calcas-menu',
+      fetchMenu: async({state,libraries}) => {
+        try {
+          const response = await libraries.source.api.get({
+            endpoint: `/menus/v1/menus/${state.theme.menuUrl}/`,
+          });
+          const postData = await response.json();
+          state.theme.menu = postData.items;
+        } catch (error) {
+          console.error('Failed to fetch menu:', error);
+        }
+      },
       isMobileMenuOpen: false,
       featured: {
-        showOnList: true,
-        showOnPost: true,
+        showOnList: false,
+        showOnPost: false,
       },
     },
   },

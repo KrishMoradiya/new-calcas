@@ -22,7 +22,7 @@ export const NavbarDefaultProps = {
 export const CustomMenuPropTypes = {
     handleMenuClose: PropTypes.func.isRequired,
     selectedMenu: PropTypes.string,
-    anchorEl:PropTypes.node,
+    anchorEl:PropTypes.any,
     menuOpen:PropTypes.bool.isRequired,
     navSectionItem: PropTypes.object.isRequired
 }
@@ -40,17 +40,18 @@ export const MenuBoxDefaultProps = {
 }
 export const SubMenuSectionPropTypes = {
     items : PropTypes.object.isRequired,
-    color:PropTypes.objectOf(
+    /*color:PropTypes.objectOf(
         PropTypes.shape({
             borderColor:PropTypes.string.isRequired,
             textColor:PropTypes.string.isRequired,
-            backgroundColor:PropTypes.string.isRequired,
+            bgColor:PropTypes.string.isRequired,
         })
-    ),
+    ),*/
+    color: PropTypes.object.isRequired,
     subMenu: PropTypes.arrayOf(
         PropTypes.shape({
-            label: PropTypes.string.isRequired,
-            key: PropTypes.string.isRequired,
+            title: PropTypes.string.isRequired,
+            url: PropTypes.string.isRequired,
         })
     )
 }
@@ -62,7 +63,7 @@ export const SubMenuSectionDefaultProps = {
     color:{
         borderColor:'transparent',
         textColor:'primary',
-        backgroundColor:'transparent',
+        bgColor:'transparent',
     },
     subMenu: [
         {
@@ -90,7 +91,7 @@ export const NavbarLinksDefaultProps = {
     isSelected: false
 }
 
-export const UserMenuPropType = {
+export const UserMenuPropTypes = {
     handleMenuClose: PropTypes.func.isRequired,
 }
 export const UserMenuDefaultProps = {

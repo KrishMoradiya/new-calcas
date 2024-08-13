@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { connect, Head } from 'frontity';
 import { ThemeProvider } from '@mui/material/styles';
 import customTheme from '../styles/themes/theme';
@@ -17,9 +17,11 @@ import '@fontsource/raleway/500-italic.css';
 import '@fontsource/raleway/700-italic.css';
 import '@fontsource/material-icons';
 import Navbar from "./navbar/navbar/Navbar";
-import items from './navbar/navbar-data/menu-item'
+import {ClaimExtraComponent} from "./navbar/extra-components/ClaimExtraComponent";
+
 
 function Root() {
+
   return (
     <>
       <Head>
@@ -28,7 +30,8 @@ function Root() {
         <html lang="en" />
       </Head>
       <ThemeProvider theme={customTheme}>
-          <Navbar items={items} />
+          <Navbar />
+          {/*<ClaimExtraComponent />*/}
       </ThemeProvider>
     </>
   );

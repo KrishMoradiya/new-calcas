@@ -9,10 +9,13 @@ const settings = {
   },
   packages: [
     {
+      name: 'calcas-theme',
+    },
+    {
       name: '@frontity/wp-source',
       state: {
         source: {
-          url: 'http://localhost/calcas-frontend-project/wp-json',
+          api: 'http://localhost/calcas-frontend-project/wp-json',
         },
       },
     },

@@ -41,14 +41,25 @@ export const StyledLink = styled(Link)(({})=>({
 export const StyledMenu = styled((props) => (
     <Menu
         elevation={0}
+        anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'center',
+        }}
+        transformOrigin={{
+            vertical: 'top',
+            horizontal: 'center',
+        }}
         {...props}
     />
 ))(({ theme }) => ({
-    disableScrolling:true,
-    disableScrollLock:true,
+    // disableScrolling:true,
+    // disableScrollLock:true,
     pointerEvents:'none',
+    '& ::-webkit-scrollbar': {
+      width: 0
+    },
     '& .MuiPopover-paper':{
-        maxHeight:'none',
+        // maxHeight:'none',
         right:'40px',
         left:'auto !important',
         marginLeft:'40px',

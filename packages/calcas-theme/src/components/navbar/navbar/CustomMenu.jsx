@@ -18,14 +18,14 @@ const CustomMenu = (props) => {
             id="navbar-menu-card"
             MenuListProps={{
                 'aria-labelledby': selectedMenu,
-                // onMouseLeave:handleMenuClose
+                onMouseLeave:handleMenuClose
             }}
             anchorEl={anchorEl}
             open={menuOpen}
             onClose={handleMenuClose}
             sx={{mt:{sm:7,md:1,xs:'none'}}}
         >
-            <MenuBox navSectionItem={navSectionItem} />
+            <MenuBox navSectionItem={Object.assign({},navSectionItem)} />
         </StyledMenu>
     );
 }
